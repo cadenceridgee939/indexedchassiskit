@@ -1,4 +1,4 @@
-const CHAIN: &str = "codec-bench-bd40d3";
+const CHAIN: &str = "codec-bench-213e01";
 fn main() {
     let data: Vec<i32> = (1..=20).collect();
     let evens: Vec<i32> = data.iter().filter(|&&x| x % 2 == 0).cloned().collect();
